@@ -18,9 +18,11 @@ Install and update using `pip`_:
 TODOS
 ----------------
 
--   Add working extension!!
--   Add sample code
+-   Test all conditions
+-   Add black formatting
+-   Add sample code to readme
 -   Add more links to readme
+-   Add more documentation to code
 -   Add changes file
 -   Complete manifest.in file
 -   Complete setup.cfg file
