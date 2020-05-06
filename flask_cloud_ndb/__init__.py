@@ -11,7 +11,7 @@ from google.auth._default import _load_credentials_from_file
 from google.cloud import ndb
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def ndb_wsgi_middleware(wsgi_app, client=None):
@@ -83,6 +83,7 @@ class CloudNDB(object):
                     "NDB_DATASTORE_HOST"]
                 os.environ["DATASTORE_PROJECT_ID"] = app.config[
                     "NDB_DATASTORE_PROJECT_ID"]
+                credentials = None
 
             self.client = ndb.Client(
                 project=project, namespace=namespace, credentials=credentials)
