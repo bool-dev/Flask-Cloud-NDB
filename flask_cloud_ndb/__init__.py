@@ -11,7 +11,7 @@ from google.auth._default import _load_credentials_from_file
 from google.cloud import ndb
 
 
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 
 def ndb_wsgi_middleware(wsgi_app, client=None):
@@ -89,3 +89,11 @@ class CloudNDB(object):
                 project=project, namespace=namespace, credentials=credentials)
 
         app.wsgi_app = ndb_wsgi_middleware(app.wsgi_app, client=self.client)
+
+    def context(self):
+        """Simple wrapper around the context from google cloud ndb client
+        """
+        if not self.client:
+            raise Exception('No client connection configured')
+
+        return self.client.context()
