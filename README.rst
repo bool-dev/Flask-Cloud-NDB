@@ -15,12 +15,62 @@ Install and update using `pip`_:
   $ pip install -U Flask-Cloud-NDB
 
 
+A Simple Example
+----------------
+
+.. code-block:: python
+
+    from flask import Flask
+    from google.cloud import ndb
+    from flask_cloud_ndb import CloudNDB
+
+    app = Flask(__name__)
+    cloud_ndb = CloudNDB(app)
+
+
+    class Note(ndb.Model):
+        title = ndb.StringProperty()
+        content = ndb.StringProperty()
+        created_at = ndb.DateTimeProperty()
+
+
+    @app.route('/')
+    def index():
+        Note(
+            title="Flask Cloud NDB with request",
+            content="This is an extension, and here is an example"
+            " of how to use within a request").put()
+
+        notes = Note.query().fetch()
+
+        return notes[0].title
+
+
+    # we can also simply use the context wrapper:
+    with cloud_ndb.context():
+        Note(
+            title="Flask Cloud NDB without request",
+            content="This is an extension, and here is an example "
+            "of how to use without request").put()
+        notes = Note.query().fetch()
+        print(notes[0].title)
+
+
+    if __name__ == '__main__':
+        app.run()
+
+
+Configuration Options
+---------------------
+
+By default the extension will run by itself in the cloud, without any additional configurations, using the default app engine credentials.
+
+
 TODOS
 ----------------
 
--   Test all conditions
+-   Add full configuration options description in readme
 -   Add black formatting
--   Add sample code to readme
 -   Add more links to readme
 -   Add more documentation to code
 -   Add changes file
