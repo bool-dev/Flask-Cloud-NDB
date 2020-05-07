@@ -1,9 +1,4 @@
-"""
-Flask Cloud NDB
--------------
-
-Adds Google Cloud NDB support to Flask
-"""
+"""Flask Cloud NDB: Adds Google Cloud NDB support to Flask"""
 
 import re
 from setuptools import setup
@@ -30,6 +25,7 @@ setup(
     maintainer_email='bool.dev@gmail.com',
     description=__doc__,
     long_description=open('README.rst').read(),
+    long_description_content_type='text/x-rst',
     python_requires='>= 3.0, != 3.0.*, != 3.1.*, != 3.2.*, != 3.3.*',
     packages=['flask_cloud_ndb'],
     include_package_data=True,
@@ -37,7 +33,7 @@ setup(
     platforms='any',
     install_requires=['Flask>=1.1.2', 'google-cloud-ndb>=1.2.0'],
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

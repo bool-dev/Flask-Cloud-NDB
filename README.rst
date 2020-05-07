@@ -1,5 +1,5 @@
 Flask-Cloud-NDB
-================
+===============
 
 Flask-Cloud-NDB is an extension for `Flask`_ that adds support for
 `Google Cloud NDB`_ to your application.
@@ -12,7 +12,7 @@ Install and update using `pip`_:
 
 .. code-block:: text
 
-  $ pip install -U Flask-Cloud-NDB
+    $ pip install -U Flask-Cloud-NDB
 
 
 A Simple Example
@@ -67,7 +67,7 @@ By default the extension will run by itself in the cloud, without any additional
 
 
 TODOS
-----------------
+-----
 
 -   Add full configuration options description in readme
 -   Add black formatting
@@ -84,6 +84,7 @@ TODOS
 Links
 -----
 
+-   Documentation: https://github.com/bool-dev/flask-cloud-ndb
 -   Code: https://github.com/bool-dev/flask-cloud-ndb
 -   Issue tracker: https://github.com/bool-dev/flask-cloud-ndb/issues
 
