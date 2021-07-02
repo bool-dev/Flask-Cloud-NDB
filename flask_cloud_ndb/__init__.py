@@ -7,7 +7,7 @@ Adds Google Cloud NDB support to Flask
 
 import os
 
-from google.auth._default import _load_credentials_from_file
+from google.auth._default import load_credentials_from_file
 from google.cloud import ndb
 
 
@@ -63,7 +63,7 @@ class CloudNDB(object):
             credentials_file = app.config["NDB_GOOGLE_APPLICATION_CREDENTIALS"]
             if credentials_file:
                 # call google auth helper to initialise credentials
-                credentials, project_id = _load_credentials_from_file(
+                credentials, project_id = load_credentials_from_file(
                     credentials_file)
             else:
                 # default credentials, OR load from env, through underlying
